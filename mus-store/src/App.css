@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --prime-color: #1C1678;
+  --secondary: #8576FF;
+  --third: #7BC9FF;
+  --dark: #A3FFD6;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+input {
+  outline: none;
+  background-color: inherit;
+  border: 1px solid white;
+  border-radius: 2em;
+  padding: .3em .9em;
+}
