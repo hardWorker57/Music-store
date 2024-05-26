@@ -1,4 +1,5 @@
 import React from "react";
+import Auth from "../components/Specials/Catalogs/Auth";
 
 const Account = () => {
   return (
@@ -7,6 +8,7 @@ const Account = () => {
       <hr />
       <br />
       
+      <Auth />
     </div>
   );
 };

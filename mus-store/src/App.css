@@ -17,10 +17,65 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.adelay {
+  transition: all .3s ease;
+}
+
+a {
+  border-bottom: 2px solid transparent;
+  transition: border-color .3s ease;
+}
+a.active {
+  border-color: red;
+}
+.header li a {
+  padding: 0.25rem 0;
+}
 input {
   outline: none;
   background-color: inherit;
   border: 1px solid white;
   border-radius: 2em;
   padding: .3em .9em;
+}
+::placeholder {
+  color: #C4C4C4;
+}
+.cardColor {
+  background-color: #565ABB;
+}
+.cartInput{
+  border: none;
+  background-color: #6268C6;
+  border-radius: 0.6rem;
+}
+button {
+  padding: 0.5rem 1.25rem; 
+  border-radius: 0.75rem; 
+  /* border: .1px solid rgb(243, 244, 246); */
+  background: rgb(30, 41, 59);
+}
+.full_screen_slider {
+  position: absolute;
+  max-width: 100%;
+  z-index: 0;
+  top: 0;
+}
+.glass {
+  background-color: rgba(179, 221, 27, 0.577);
+  backdrop-filter: blur(2px);
+  mix-blend-mode: luminosity;
+}
+.footer {
+  /* clip-path: polygon(50% 41%, 75% 42%, 100% 31%, 100% 94%, 75% 75%, 45% 69%, 23% 72%, 0 85%, 0 10%, 24% 30%); */
+  /* clip-path: polygon(47% 48%, 77% 44%, 100% 28%, 100% 100%, 82% 86%, 57% 72%, 26% 69%, 0 79%, 0 0, 20% 31%); */
+  border-top: 2px solid white;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+@media screen and (max-width: 1000px)  {
+  body {
+    font-size: 13px;
+  }
 }
