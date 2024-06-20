@@ -1,4 +1,5 @@
-import React from 'react'
+import gsap from 'gsap/gsap-core';
+import React, { useEffect, useRef } from 'react'
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,14 +8,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const Blog = () => {
 
   const sections = ['news', 'reviews', 'jazz', 'rock', 'pop', 'pop-punk', 'metal', 'classical', 'electronic']
+  const title = useRef(null);
+  const dash = useRef(null);
+  const block = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(title.current, {skewX: 40, x: -100, opacity: 0}, {skewX: 0, x: 0, opacity: 1, duration: .6, delay: .4, ease: true, scrollTrigger: {trigger: title.current}});
+    
+    gsap.fromTo(dash.current, {width: 0, opacity: 0}, { width: '100%', opacity: 1, duration: 1.3, delay: .6, ease: true, scrollTrigger: {trigger: title.current} });
+
+    gsap.fromTo(block.current, { opacity: 0, y: 100 }, { opacity: 1, y: 0, delay: .4, duration: .9 })
+    
+    }, [])
 
   return (
     <div className="max-w-screen-xl mx-auto">
-      <h2 className="pt-14 pb-5 text-2xl">Blog</h2>
-      <hr />
+      <h2 ref={title} className="pt-14 pb-5 text-2xl">Blog</h2>
+      <hr ref={dash}/>
       <br />
-      <div className="flex justify-between items-center bg-green-300 w-full h-60 rounded-3xl p-8 text-xl">
-      <Swiper
+      <div ref={block} className="flex justify-between items-center bg-green-300 w-full h-60 rounded-3xl p-8 text-xl">
+      <Swiper 
         // install Swiper modules
         modules={[EffectFade, Autoplay, Navigation, Pagination]}
         

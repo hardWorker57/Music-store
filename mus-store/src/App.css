@@ -1,3 +1,4 @@
+/* App.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,8 +17,12 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  transition: all .3s ease;
 }
 
+.delay {
+  transition: color .3s ease;
+}
 .adelay {
   transition: all .3s ease;
 }
@@ -50,11 +55,64 @@ input {
   background-color: #6268C6;
   border-radius: 0.6rem;
 }
+.toast {
+  visibility: hidden;
+}
+.toastActive {
+  opacity: 0;
+  /* transition: all .2s ease-out; */
+  animation: toast .4s ease forwards;
+}
+@keyframes toast {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.cart_item {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 button {
+  position: relative;
   padding: 0.5rem 1.25rem; 
   border-radius: 0.75rem; 
   /* border: .1px solid rgb(243, 244, 246); */
   background: rgb(30, 41, 59);
+  transition: .3s ease-in-out;
+  overflow: hidden;
+}
+.prime_btn {
+  transition: none;
+}
+button:hover {
+  transform: scale(1.08);
+}
+.update {
+  position: relative;
+  overflow: hidden;
+}
+button:after, .update:after {
+  content: "";
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  padding-top: 100%;
+  padding-left: 250%;
+  margin-left: -20px!important;
+  margin-top: -80%;
+  opacity: 0;
+  transition: all 1s
+}
+
+button:active:after, .update:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
 }
 .full_screen_slider {
   position: absolute;
@@ -74,6 +132,53 @@ button {
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
 }
+.footer_main {
+  margin-top: 5em;
+}
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a.active {
+  color: #007bff;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  /* background-color: #fff; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h1 {
+  color: #343a40;
+}
+
 @media screen and (max-width: 1000px)  {
   body {
     font-size: 13px;

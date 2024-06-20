@@ -22,7 +22,7 @@ const Banner_section = () => {
       <div className="flex flex-col items-start gap-3">
         <div ref={title} className="text-7xl">Premium instruments online shop</div>
         <div ref={desc} className="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus exercitationem assumenda possimus temporibus dolorem. Nihil officiis quisquam accusamus iusto quod?</div>
-        <button ref={btn} className='btn py-2 px-5 rounded-xl border-gray-100 bg-slate-800'>Shop now</button>
+        <button ref={btn} className='btn prime_btn py-2 px-5 rounded-xl border-gray-100 bg-slate-800'>Shop now</button>
       </div>
       <div className="max-w-xl">
         <img ref={banner} className='max-w-full' src={img} alt="banner-image" />

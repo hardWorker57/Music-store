@@ -1,17 +1,17 @@
-import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { useState } from 'react'
 import { auth, GoogleProvider } from '../../../config/firebase';
 
-const Auth = () => {
+const SignIn = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     // console.log(auth?.currentUser?.email)
 
-    const signUp = async () => {
+    const signIn = async () => {
         try {
-            await createUserWithEmailAndPassword(auth, email, password);
+            await signInWithEmailAndPassword(auth, email, password);
         } catch (err) {
             console.log(err);
         }
@@ -33,12 +33,12 @@ const Auth = () => {
 
   return (
       <div className='flex flex-col gap-y-9 items-center'>
-          <h2 className='text-2xl'>Register</h2>
+          <h2 className='text-2xl'>Login</h2>
           <div className="inputs">
             <input onChange={(e) => setEmail(e.target.value)} placeholder='email' type="text" /> <span></span>
             <input onChange={(e) => setPassword(e.target.value)} placeholder='password' type="password" />    
           </div>
-          <button onClick={signUp}>Sign up</button>
+          <button onClick={signIn}>Sign in</button>
           <button onClick={signInWithGoogle}>Sign in with google</button>
           {/* <button onClick={logOut}>Log out</button> */}
       </div>
@@ -46,4 +46,4 @@ const Auth = () => {
   )
 }
 
-export default Auth
+export default SignIn
