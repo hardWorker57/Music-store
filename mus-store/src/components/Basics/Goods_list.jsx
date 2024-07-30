@@ -64,8 +64,8 @@ const Goods_list = () => {
       <p className='text-xl'>Filter</p> <br/><hr ref={dash}/><br/>
       <div className="list max-w-max mx-auto flex flex-wrap justify-center gap-x-10 gap-y-5">
         {goodsList.map((product, id) => (
-          <Link className='card' to={`/product/${product.item}`} key={id}>
-            <div className="flex flex-col items-start gap-1 max-w-64 hover:scale-105 adelay">
+          <Link to={`/product/${product.item}`} key={id}>
+            <div className="card flex flex-col items-start gap-1 max-w-64 hover:scale-105 adelay">
               <div className="rounded-2xl bg-red-200 overflow-hidden w-full h-72">
                 <img src={product.img} alt="" className='max-w-full w-full h-full'/>
               </div>

@@ -106,14 +106,14 @@ function App() {
   return (
     <div className="bg-slate-500 text-white h-full overflow-x-hidden">
       <Header instruments={instrumentsList}/>
-      <div className="relative mt-10 z-10">
+      {/* <div className="relative mt-10 z-10">
         <input placeholder="title" type="text" onChange={(e) => setNewInstrTitle(e.target.value)}/>
         <input placeholder="price" type="text" onChange={(e) => setNewInstrPrice(Number(e.target.value))}/>
         <input placeholder="description" type="text" onChange={(e) => setNewInstrDesc(e.target.value)}/>
         <input placeholder="producer" type="text" onChange={(e) => setNewInstrProducer(e.target.value)} />
         <input placeholder="type" type="text" onChange={(e) => setNewInstrType(e.target.value)}/>
         <button onClick={onSubmitInstrument}>Submit</button>
-      </div>
+      </div> */}
       <Routes>
         <Route path="/" element={<Home_page />} />
         <Route path="/about" element={<About />} />
